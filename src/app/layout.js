@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 // import "./globals.css";
-import 'bootswatch/dist/sketchy/bootstrap.min.css';
+import 'bootswatch/dist/lumen/bootstrap.min.css';
+
+import InfoFooter from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,10 @@ export default function RootLayout({ children }) {
       <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       </head>
-      <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          {children}
+          <InfoFooter />
+        </body>
     </html>
   );
 }
