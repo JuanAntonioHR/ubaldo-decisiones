@@ -1,13 +1,24 @@
 import { useState } from 'react';
 import { Button, Form, InputGroup } from 'react-bootstrap';
+import { useFormContext } from '../context/FormContext';
 
 function FieldArray({ label, items, setItems, placeholder, select = null, data = false }) {
+  const { formData, setFormData } = useFormContext();
+  
   const [categories, setCategories] = useState(items.map(() => ''));
+
+  const handleChange = (field, value) => {
+    setFormData({
+      ...formData,
+      [field]: value,
+    });
+  };
 
   const handleArrayChange = (index, value) => {
     const updatedArray = [...items];
     updatedArray[index] = value;
     setItems(updatedArray);
+    handleChange(label, updatedArray);
   };
 
   const handleCategoryChange = (index, value, item) => {
@@ -24,9 +35,9 @@ function FieldArray({ label, items, setItems, placeholder, select = null, data =
 
   const handleRemoveField = (index) => {
     const updatedArray = items.filter((_, i) => i !== index);
-    const updatedCategories = categories.filter((_, i) => i !== index);
     setItems(updatedArray);
-    setCategories(updatedCategories);
+    setCategories(categories.filter((_, i) => i !== index));
+    handleChange(label, updatedArray);
   };
 
   if (data) {
