@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Form, InputGroup } from 'react-bootstrap';
 
-const FieldArray = ({ label, items, setItems, placeholder, select = null, data = false }) => {
+function FieldArray({ label, items, setItems, placeholder, select = null, data = false }) {
   const [categories, setCategories] = useState(items.map(() => ''));
 
   const handleArrayChange = (index, value) => {
