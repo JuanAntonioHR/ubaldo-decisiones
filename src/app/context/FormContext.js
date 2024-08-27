@@ -9,10 +9,10 @@ export const useFormContext = () => {
 
 export const FormProvider = ({ children }) => {
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
+    title: 'Hola',
+    description: 'Hola',
     objective: '',
-    strengths: [''],
+    strengths: ['Yo', 'Tu', 'El', 'Nosotros', 'Ustedes', 'Ellos'],
     weaknesses: [''],
     opportunities: [''],
     threats: [''],
