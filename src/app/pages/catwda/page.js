@@ -20,25 +20,6 @@ function Catwda() {
                 </div>
 
                 <Row className="g-4">
-                    {/* {Array.from({ length: 3 }).map((_, idx) => (
-                        <Col key={idx} md={4}>
-                            <Card bg="primary" text="white" className="mb-3">
-                                <Card.Img variant="top" src="/imgs/catwda/clientes.jpeg" />
-                                <Card.Header as="h3">Clientes</Card.Header>
-                                <Card.Body>
-                                    <Card.Title>Clientes</Card.Title>
-                                    <Card.Text>
-                                        Partes interesadas en la decisión
-                                    </Card.Text>
-                                </Card.Body>
-                                <ListGroup variant="flush">
-                                    {formData.stakeholders.map((stakeholder, idx) => (
-                                        <ListGroup.Item variant="primary" key={idx}>{stakeholder}</ListGroup.Item>
-                                    ))}
-                                </ListGroup>
-                            </Card>
-                        </Col>
-                    ))} */}
                     <Col md={4}>
                         <Card bg="primary" text="white" className="mb-3">
                             <Card.Img variant="top" src="/imgs/catwda/clientes.jpeg" />
