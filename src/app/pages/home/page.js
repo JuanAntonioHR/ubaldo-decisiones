@@ -45,25 +45,25 @@ function ContentRow() {
       imgSrc: '/imgs/catwda.jpeg',
       title: 'Análisis CATWDA',
       text: 'El análisis CATWDA es una herramienta de planificación estratégica que permite evaluar los clientes, actores, transformaciones, weltanschaung, dueños y ambiente de un proyecto o negocio.',
-      link: 'question-form'
+      link: 'catwda'
     },
     {
       imgSrc: '/imgs/ishikawa.jpeg',
       title: 'Diagrama de Ishikawa',
       text: 'El diagrama de Ishikawa es una herramienta de análisis que permite identificar las causas de un problema.',
-      link: 'question-form'
+      link: 'ishikawa'
     },
     {
       imgSrc: '/imgs/pareto.jpeg',
       title: 'Diagrama de Pareto',
       text: 'El diagrama de Pareto es una herramienta de análisis que permite visualizar datos cuantitativos de forma ordenada.',
-      link: 'question-form'
+      link: 'pareto'
     },
     {
       imgSrc: '/imgs/sombreros.jpeg',
       title: 'Sombreros de pensamiento',
       text: 'Los sombreros de pensamiento es una técnica que permite analizar un problema desde diferentes perspectivas.',
-      link: 'question-form'
+      link: 'sombreros'
     }
   ];
 
