@@ -14,31 +14,26 @@ function Ishikawa() {
             Problem[Problema Principal]
             subgraph Causas
                 ${formData.causes.map((cause) => (
-                    `${cause[1].substring(0, 3)}[${cause[1]}] --> Problem
-                    `
+                    cause[1] ? `${cause[1].substring(0, 3)}[${cause[1]}] --> Problem` : ''
                 )).join('')}
                 Med[Medición] --> Problem
                 Medi[Medio Ambiente] --> Problem
             end
 
             ${formData.causes.map((cause, idx) => (
-                `${cause[1].substring(0, 3)} --> ${cause[1].substring(0, 3)}${idx}[${cause[0]}]
-                `
+                cause[1] ? `${cause[1].substring(0, 3)} --> ${cause[1].substring(0, 3)}${idx}[${cause[0]}]` : ''
             )).join('')}
             
             ${formData.dataPoints.map((dataPoint, idx) => (
-                `Med --> Med${idx}[${dataPoint.description}]
-                `
+                `Med --> Med${idx}[${dataPoint.description}]`
             )).join('')}
 
             ${formData.opportunities.map((opportunity, idx) => (
-                `Medi --> Medi${idx}[${opportunity}]
-                `
+                `Medi --> Medi${idx}[${opportunity}]`
             )).join('')}
             
             ${formData.threats.map((threat, idx) => (
-                `Medi --> Medi0${idx}[${threat}]
-                `
+                `Medi --> Medi0${idx}[${threat}]`
             )).join('')}
     `;
 

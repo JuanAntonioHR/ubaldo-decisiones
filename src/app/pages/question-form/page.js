@@ -155,7 +155,7 @@ function QuestionForm() {
                     />
 
                     <FieldArray
-                      label="Posibles Causas del Problema (Por favor, ingrese una opción de cada categoría)"
+                      label="Posibles Causas del Problema (Por favor, ingrese al menos una opción de cada categoría)"
                       items={causes}
                       setItems={setCauses}
                       placeholder="Ingresa una posible causa"
