@@ -1,9 +1,14 @@
 'use client';
+import { useFormContext } from '@/app/context/FormContext';
 import { Container, Button, Form, Row, Col } from 'react-bootstrap';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation'
 import FieldArray from '@/app/components/FieldArray';
 
 function QuestionForm() {
+  const router = useRouter();
+  const { formData, setFormData } = useFormContext();
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [objective, setObjective] = useState('');
@@ -17,6 +22,33 @@ function QuestionForm() {
   const [dataPoints, setDataPoints] = useState([{ description: '', value: '' }]);
   const [evaluationOptions, setEvaluationOptions] = useState(['']);
   const [feelings, setFeelings] = useState(['']);
+
+  const handleSubmit = (e) => {
+    // dont proceed if the form is empty
+    if (!title || !description || !objective || !strengths[0] || !weaknesses[0] || !opportunities[0] || !threats[0] || !stakeholders[0] || !owners[0] || !causes[0] || !dataPoints[0].description || !dataPoints[0].value || !evaluationOptions[0] || !feelings[0]) {
+      return;
+    }
+
+    e.preventDefault();
+
+    setFormData({
+      title,
+      description,
+      objective,
+      strengths,
+      weaknesses,
+      opportunities,
+      threats,
+      stakeholders,
+      owners,
+      causes,
+      dataPoints,
+      evaluationOptions,
+      feelings,
+    });
+
+    router.push('/pages/home');
+  };
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -154,7 +186,7 @@ function QuestionForm() {
                     />
 
                     <div className="d-grid mt-4">
-                      <Button variant="primary" size="lg" type="submit">
+                      <Button variant="primary" type="submit" onClick={handleSubmit}>
                         Continuar
                       </Button>
                     </div>
